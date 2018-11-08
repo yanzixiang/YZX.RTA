@@ -1,0 +1,84 @@
+﻿<UserControl 
+  x:Class="YZX.WINCC.Controls.LightEmitterWPF"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:pcp="clr-namespace:AITSW.PCPANEL.WPF;assembly=PCPANEL_WPF_Controls"
+  mc:Ignorable="d" 
+  d:DesignWidth="50"
+  d:DesignHeight="150">
+  
+  <Grid Width="50">
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <pcp:Lamp Grid.Row="0" Design="StackLightTop">
+      <pcp:Lamp.Colors>
+        <pcp:ControlColors AuxiliaryColor1="Silver">
+          <pcp:ControlColors.DefaultColoring>
+            <pcp:ColoringColor />
+          </pcp:ControlColors.DefaultColoring>
+          <pcp:ControlColors.State1Coloring>
+            <pcp:ColoringColor Color1="Maroon" ColorMode="Simple"/>
+          </pcp:ControlColors.State1Coloring>
+          <pcp:ControlColors.State2Coloring>
+            <pcp:ColoringColor Color1="Red" ColorMode="Simple"/>
+          </pcp:ControlColors.State2Coloring>
+          <pcp:ControlColors.State3Coloring>
+            <pcp:ColoringColor Color1="Red" Color2="Maroon" ColorMode="Blink"/>
+          </pcp:ControlColors.State3Coloring>
+        </pcp:ControlColors>
+      </pcp:Lamp.Colors>
+      <pcp:Lamp.States>
+        <pcp:StatesInt x:Name="Red" x:FieldModifier="public" State="3" />
+      </pcp:Lamp.States>
+    </pcp:Lamp>
+
+    <pcp:Lamp Grid.Row="1" Grid.Column="2" Design="StackLightMiddle">
+      <pcp:Lamp.Colors>
+        <pcp:ControlColors AuxiliaryColor1="Silver">
+          <pcp:ControlColors.DefaultColoring>
+            <pcp:ColoringColor Color1="Olive" />
+          </pcp:ControlColors.DefaultColoring>
+          <pcp:ControlColors.State1Coloring>
+            <pcp:ColoringColor Color1="Khaki" ColorMode="Simple"/>
+          </pcp:ControlColors.State1Coloring>
+          <pcp:ControlColors.State2Coloring>
+            <pcp:ColoringColor Color1="Yellow" ColorMode="Simple"/>
+          </pcp:ControlColors.State2Coloring>
+          <pcp:ControlColors.State3Coloring>
+            <pcp:ColoringColor Color1="Yellow" Color2="Khaki" ColorMode="Blink"/>
+          </pcp:ControlColors.State3Coloring>
+        </pcp:ControlColors>
+      </pcp:Lamp.Colors>
+      <pcp:Lamp.States>
+        <pcp:StatesInt x:Name="Yellow" x:FieldModifier="public" State="3" />
+      </pcp:Lamp.States>
+    </pcp:Lamp>
+
+    <pcp:Lamp Grid.Row="2" Design="StackLightBottom">
+      <pcp:Lamp.Colors>
+        <pcp:ControlColors AuxiliaryColor1="Silver">
+          <pcp:ControlColors.DefaultColoring>
+            <pcp:ColoringColor Color1="Green" />
+          </pcp:ControlColors.DefaultColoring>
+          <pcp:ControlColors.State1Coloring>
+            <pcp:ColoringColor Color1="LightGreen" ColorMode="Simple"/>
+          </pcp:ControlColors.State1Coloring>
+          <pcp:ControlColors.State2Coloring>
+            <pcp:ColoringColor Color1="Lime" ColorMode="Simple"/>
+          </pcp:ControlColors.State2Coloring>
+          <pcp:ControlColors.State3Coloring>
+            <pcp:ColoringColor Color1="Lime" Color2="LightGreen" ColorMode="Blink"/>
+          </pcp:ControlColors.State3Coloring>
+        </pcp:ControlColors>
+      </pcp:Lamp.Colors>
+      <pcp:Lamp.States>
+        <pcp:StatesInt x:Name="Green" x:FieldModifier="public" State="3" />
+      </pcp:Lamp.States>
+    </pcp:Lamp>
+  </Grid>
+</UserControl>

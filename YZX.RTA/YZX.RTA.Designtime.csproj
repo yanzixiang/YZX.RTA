@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00537356-3087-4401-90E5-802E6D61BECD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YZX.WINCC.Controls</RootNamespace>
+    <AssemblyName>YZX.WINCC.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\CRACK\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TIA</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.3\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Controls.2.2.5\lib\AForge.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HelixToolkit, Version=2015.1.715.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.2015.1.715\lib\portable-net4+sl4+wp71+win8\HelixToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf, Version=2015.1.715.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.Wpf.2015.1.715\lib\net40\HelixToolkit.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.5.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\IronPython\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\newtonsoft.Json\6.0.8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Siemens.Automation.Basics">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Automation.Basics.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Automation.CommonTrace.IntegrationDotNet, Version=1300.106.601.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Automation.CommonTrace.IntegrationDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Automation.Diagnostics.Client">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Automation.Diagnostics.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Automation.ObjectFrame">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Automation.ObjectFrame.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Automation.UI.Controls">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Automation.UI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Automation.UI.Win32, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Automation.UI.Win32.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Runtime.ControlDev">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\WinCC RT Advanced\Siemens.Runtime.ControlDev.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Common, Version=1300.108.301.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Dynamics.Interfaces, Version=1300.100.2501.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Dynamics.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Global">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Global.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Globalization.Interfaces">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Globalization.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.GraphX.Controls.Interfaces">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.GraphX.Controls.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.GraphX.GraphXManagers.Scan, Version=1300.108.301.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.GraphX.GraphXManagers.Scan.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.GraphX.Interfaces">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.GraphX.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.GraphX.InterfacesUI, Version=1300.108.301.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.GraphX.InterfacesUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Scripting.Interfaces, Version=1300.108.301.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Scripting.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Scripting.Managers.Scan">
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Scripting.Managers.Scan.dll</HintPath>
+    </Reference>
+    <Reference Include="Siemens.Simatic.Hmi.Tag.Interfaces, Version=1300.106.601.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Siemens\Automation\Portal V13\Bin\Siemens.Simatic.Hmi.Tag.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\..\DLL\Reactive\4.0\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\..\DLL\Reactive\4.0\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\..\DLL\Reactive\4.0\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFValueConverters">
+      <HintPath>..\..\DLL\WPFValueConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.14.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.14.0.1\lib\net40\zxing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.14.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.14.0.1\lib\net40\zxing.presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveX\AxFwViewBattery.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveX\PlcCodeViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveX\PlcCodeViewerOverview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveX\AxFwViewWlanQuality.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControl.IHmiScreenItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CControl.Runtime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TIAIronPythonConsoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TIAIronPythonConsoleForm.Designer.cs">
+      <DependentUpon>TIAIronPythonConsoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PInvoke\CETransfer.cs" />
+    <Compile Include="SupportedDynamicTypesAttributes.cs" />
+    <Compile Include="VIEW\BatteryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\BatteryView.Designer.cs">
+      <DependentUpon>BatteryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\ButtonView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\CameraDevices.cs" />
+    <Compile Include="VIEW\OdometerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\GraduatorView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\DigitalMeterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\PythonRunningLineView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\OperatorProtectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\ZXingScanView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\ZXingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\ByteViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\LabelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\ProgressBarView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\PythonDebugerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\PythonConsoleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\SerialPortView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\ToggleSwitchView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\VehicleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\GadgetCommunicationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\RandomView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\WarningView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\RichTextBoxView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\NumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\WlanSignalQuality.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\WlanSignalQuality.Designer.cs">
+      <DependentUpon>WlanSignalQuality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\CylinderWPF.xaml.cs">
+      <DependentUpon>CylinderWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\CylinderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WPF\DigitalMeterWPF.xaml.cs">
+      <DependentUpon>DigitalMeterWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\GadgetCommunicationWPF.xaml.cs">
+      <DependentUpon>GadgetCommunicationWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\GraduatorWPF.xaml.cs">
+      <DependentUpon>GraduatorWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\MoonyClockCtrl.xaml.cs">
+      <DependentUpon>MoonyClockCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\LightEmitterView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WPF\LightEmitterWPF.xaml.cs">
+      <DependentUpon>LightEmitterWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\TachoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WPF\PulseButton.cs" />
+    <Compile Include="WPF\OperatorProtectionWPF.xaml.cs">
+      <DependentUpon>OperatorProtectionWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\WaringWPF.xaml.cs">
+      <DependentUpon>WaringWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Siemens321322WPF.xaml.cs">
+      <DependentUpon>Siemens321322WPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\FanWPF.xaml.cs">
+      <DependentUpon>FanWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\TachoWPF.xaml.cs">
+      <DependentUpon>TachoWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\PushButtonWPF.xaml.cs">
+      <DependentUpon>PushButtonWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\PushButtonView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\MoonyClockView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WPF\MoonyClockWPF.xaml.cs">
+      <DependentUpon>MoonyClockWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\DynamicImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\DynamicImage.Designer.cs">
+      <DependentUpon>DynamicImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPFInWinForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WPFInWinForm.Designer.cs">
+      <DependentUpon>WPFInWinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\YEDAConsole.xaml.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\DynamicImage.resx">
+      <DependentUpon>DynamicImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\WlanSignalQuality.resx">
+      <DependentUpon>WlanSignalQuality.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="WPF\CylinderWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\DigitalMeterWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\GadgetCommunicationWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\GraduatorWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\MoonyClockCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\LightEmitterWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\OperatorProtectionWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\WaringWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\Siemens321322WPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\FanWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\TachoWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\PushButtonWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WPF\MoonyClockWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\YEDAConsole.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\BatteryView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\MoonyClockView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\S7GraphView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\CylinderView.bmp" />
+    <EmbeddedResource Include="Toolbox\WINCCTagView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\LightEmitterView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\TachoView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\PushButtonView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\stop.png" />
+    <EmbeddedResource Include="images\yanzixiang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\DynamicImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\PLCCodeView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\ProgressBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\TrackBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\TextBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\LabelView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\NumericUpDown.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{8f8733ab-cf0a-4d90-a665-e0d03d69e99c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\YZX.Winform\YZX.Winform.csproj">
+      <Project>{fccdd974-6d85-407d-9840-fc83408046dd}</Project>
+      <Name>YZX.Winform</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\PythonConsoleView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\PythonDebugerView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\ByteViewer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="FwViewBatteryLib">
+      <Guid>{B28A06A9-B46E-4AC3-BD7B-11697894F780}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="FwViewWlanLib">
+      <Guid>{CCF5A16B-62DC-4C9D-AC10-280E970E4E8B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\VehicleView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\WarningView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\GadgetCommunicationView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\ToggleSwitchView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Toolbox\WlanSignalQuality.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

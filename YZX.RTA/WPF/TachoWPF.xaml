@@ -1,0 +1,71 @@
+﻿<UserControl 
+  x:Class="YZX.WINCC.Controls.TachoWPF"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:pcp="clr-namespace:AITSW.PCPANEL.WPF;assembly=PCPANEL_WPF_Controls"
+  mc:Ignorable="d" 
+  d:DesignWidth="300"
+  d:DesignHeight="300">
+  
+  <Grid Width="300">
+    <pcp:Frame 
+      Width="200"
+      Height="200" 
+      HorizontalAlignment="Left" 
+      HorizontalContentAlignment="Center" 
+      VerticalContentAlignment="Center" 
+      VerticalAlignment="Top" 
+      Padding="15" 
+      BevelWidth="5" 
+      LowerWidth="5" 
+      RaiseWidth="5">
+      <pcp:Frame.Colors>
+        <pcp:ControlColors>
+          <pcp:ControlColors.DefaultColoring>
+            <pcp:ColoringColor Color1="White" />
+          </pcp:ControlColors.DefaultColoring>
+        </pcp:ControlColors>
+      </pcp:Frame.Colors>
+      <pcp:Tacho 
+        NeedleDesign="Classic" 
+        StartAngle="235" 
+        EndAngle="125" 
+        LayoutRing1Size="8" 
+        LayoutRing2Size="30" 
+        HorizontalContentAlignment="Center" 
+        VerticalContentAlignment="Top" 
+        Padding="0,45,0,0" 
+        CurrentValueIndicatorVisibility="Moveable">
+        <pcp:Tacho.OptionsScale>
+          <pcp:OptionsScale Maximum="40" MajorTickFrequency="5" TickFrequency="1">
+            <pcp:OptionsScale.RangeColors>
+              <GradientStop Offset="25" />
+              <GradientStop Color="#FFFF7000" Offset="40" />
+            </pcp:OptionsScale.RangeColors>
+            <pcp:OptionsScale.MajorTickTexts>
+              <pcp:TextItem Text="" />
+              <pcp:TextItem Text="256k" />
+              <pcp:TextItem Text="512k" />
+              <pcp:TextItem Text="1M" />
+              <pcp:TextItem Text="1.5M" />
+              <pcp:TextItem Text="3M" />
+              <pcp:TextItem Text="5M" />
+              <pcp:TextItem Text="10M" />
+              <pcp:TextItem Text="20M+" />
+            </pcp:OptionsScale.MajorTickTexts>
+          </pcp:OptionsScale>
+        </pcp:Tacho.OptionsScale>
+        <pcp:Tacho.Colors>
+          <pcp:ControlColors>
+            <pcp:ControlColors.DefaultColoring>
+              <pcp:ColoringColor Color1="Blue" />
+            </pcp:ControlColors.DefaultColoring>
+          </pcp:ControlColors>
+        </pcp:Tacho.Colors>
+        <TextBlock Foreground="LightGray" FontSize="40">带宽</TextBlock>
+      </pcp:Tacho>
+    </pcp:Frame>
+  </Grid>
+</UserControl>

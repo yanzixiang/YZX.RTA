@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\Program Files (x86)\Siemens\Automation\WinCC RT Advanced\DotNetContainerX.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80A22462-AC80-4C8E-AD33-FC55529A1AB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>DotNetContainerX</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>FwDotNetContainer</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>D:\Program Files %28x86%29\Siemens\Automation\WinCC RT Advanced\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="presentationframework.aero2" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="Siemens.Runtime.ControlDev">
+      <HintPath>lib\Siemens.Runtime.ControlDev.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComStream.cs" />
+    <Compile Include="ComponentData.cs" />
+    <Compile Include="ComponentProperty.cs" />
+    <Compile Include="ComponentEvent.cs" />
+    <Compile Include="IDotNetContainer.cs" />
+    <Compile Include="IPersistStreamManaged.cs" />
+    <Compile Include="IConnectionPointContainer.cs" />
+    <Compile Include="DotNetContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventContainerHelper.cs" />
+    <Compile Include="IEnumConnectionPoints.cs" />
+    <Compile Include="ConnectionPointList.cs" />
+    <Compile Include="EventHelper.cs" />
+    <Compile Include="EventHelper`1.cs" />
+    <Compile Include="IConnectionPoint.cs" />
+    <Compile Include="IEnumConnections.cs" />
+    <Compile Include="ConnectionList.cs" />
+    <Compile Include="IDotNetContainerEvents.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DotNetContainer.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\gitt\Common\Common.csproj">
+      <Project>{8f8733ab-cf0a-4d90-a665-e0d03d69e99c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

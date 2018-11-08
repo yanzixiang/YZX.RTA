@@ -1,0 +1,17 @@
+﻿<UserControl 
+  x:Class="YZX.WINCC.Controls.MoonyClockWPF"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:MoonyClock="clr-namespace:MoonyClock"
+  Background="Transparent"
+  mc:Ignorable="d" 
+  d:DesignWidth="360"
+  d:DesignHeight="145">
+  <MoonyClock:MoonyClockCtrl
+        MainColor="Red"
+        Margin="0 3 0 0"
+        MainColor2="Blue">
+  </MoonyClock:MoonyClockCtrl>
+</UserControl>

@@ -1,0 +1,228 @@
+﻿<UserControl 
+  x:Class="YZX.WINCC.Controls.Siemens321322WPF"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:pcp="clr-namespace:AITSW.PCPANEL.WPF;assembly=PCPANEL_WPF_Controls"
+  mc:Ignorable="d" 
+  Height="400" Width="134"
+  d:DesignHeight="400" d:DesignWidth="134">
+  <pcp:Controller Design="IOModule" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch">
+
+    <Grid>
+      <StackPanel Margin="0,37,30,0" Width="13" Orientation="Vertical">
+        <pcp:Lamp Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="1"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="2"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="4"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="8"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="16"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="32"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="64"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="128"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+      </StackPanel>
+      <StackPanel Margin="0,236,30,0" Width="13" Orientation="Vertical">
+        <pcp:Lamp Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="256"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="512"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="1024"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="2048"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="4096"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="8192"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="16384"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+        <pcp:Lamp Margin="0,3,0,0" Height="13" Design="LEDSquare">
+          <pcp:Lamp.Colors>
+            <pcp:ControlColors>
+              <pcp:ControlColors.State4Coloring>
+                <pcp:ColoringColor Color1="Green" />
+              </pcp:ControlColors.State4Coloring>
+            </pcp:ControlColors>
+          </pcp:Lamp.Colors>
+          <pcp:Lamp.States>
+            <pcp:StatesBitmask State4Bitmask="32768"
+                                Value="{Binding ElementName=textBox1, Path=Text}" />
+          </pcp:Lamp.States>
+        </pcp:Lamp>
+      </StackPanel>
+    </Grid>
+  </pcp:Controller>
+</UserControl>
